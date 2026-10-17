@@ -1,0 +1,5 @@
+.env
+.venv
+cards.db
+cards/
+main.py
