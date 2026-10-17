@@ -5,7 +5,8 @@ Setup:
     pip install -U discord.py python-dotenv
     .env file:
         DISCORD_TOKEN=your-token-here
-        APPROVER_ID=123456789012345678     (Discord user ID of js5769, recommended)
+        APPROVER_ID=123456789012345678     (Discord server admin ID, recommended)
+        Aprover_Username = aprove_username (pref admin in charge of bot)
     python card_bot.py
 
 IMPORTANT: this bot uses !prefix commands, so you must enable
@@ -52,7 +53,7 @@ CLAIM_COOLDOWN = 60      # seconds a user must wait after a successful claim bef
 
 # Who approves new cards. An ID is safer than a username (usernames can change),
 # so set APPROVER_ID in .env. If it's missing, the bot falls back to the username.
-APPROVER_USERNAME = "js5769"
+APPROVER_USERNAME = os.environ["Aprover_Username"]
 APPROVER_ID = int(os.environ["APPROVER_ID"]) if os.environ.get("APPROVER_ID") else None
 
 # rarity -> (roll weight, embed color, emoji). Higher weight = more common.
